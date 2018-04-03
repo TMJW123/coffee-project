@@ -13,7 +13,11 @@ td, th {
 }
 .coffeeLabel{
     float: left;
+    margin-left: 5%;
+    width: 30%;
 }
-#coffees{
-    height: 50%;
+.coffeeLabelTwo{
+    width: 10%;
+    margin-left: 2%;
+    float: left;
 }
