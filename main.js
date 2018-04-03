@@ -3,9 +3,9 @@
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
     html += '<h3 class = "coffeeLabel">' + coffee.name + '</h3>';
-    html += '<p>' + coffee.roast + '</p>';
+    html += '<p class = "coffeeLabel">' + coffee.roast + '</p>';
     html += '</div>';
-    html += '<br>'
+    // html += '<br>';
     return html;
 }
 
