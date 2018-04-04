@@ -9,15 +9,6 @@ function renderCoffee(coffee) {
     // html += '<br>';
     return html;
 }
-function removeCoffee(coffee) {
-
-    var html = '<div class="coffee">';
-    html -= '<h3 class = "coffeeLabel">' + coffee.name + '</h3>';
-    html -= '<p class = "coffeeLabelTwo">' + coffee.roast + '</p>';
-    html += '</div>';
-    // html += '<br>';
-    return html;
-}
 
 function renderCoffees(coffees) {
     var html = '';
@@ -41,21 +32,15 @@ function updateCoffees(e) {
 
 function getCoffee(){
     var search = document.getElementById("coffeeName").value;
+    var filterCoffees=[];
+    var selectedRoast = roastSelection.value;
     console.log(search);
-    for(var i = 0; i < coffees.length; i++) {
-        var checkString = coffees[i].name;
-        if(checkString.includes(search) == true){
-            renderCoffee(coffees[i]);
-            console.log(coffees[i].name);
-
-        }else{
-            removeCoffee(coffees[i]);
-            console.log("we removed" + coffees[i].name);
+    coffees.forEach(function(coffee) {
+        if (coffee.name.includes(search) == true && coffee.roast === selectedRoast) {
+            filterCoffees.push(coffee);
         }
-
-
-
-    }
+    });
+    tbody.innerHTML = renderCoffees(filterCoffees);
 
 }
 
@@ -82,7 +67,7 @@ var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
 var findCoffee = document.getElementById('coffeeName');
-findCoffee.addEventListener("keydown", getCoffee, false);
+findCoffee.addEventListener("keyup", getCoffee, false);
 
 
 tbody.innerHTML = renderCoffees(coffees);
