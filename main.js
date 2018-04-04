@@ -1,6 +1,52 @@
 "use strict";
 
 var coffees = [];
+
+if(localStorage.getItem('coffeeArray').length > 0) {
+    coffees = JSON.parse(localStorage.getItem('coffeeArray'));
+} else {
+    coffees = [
+        {id: 1, name: 'Light City', roast: 'light'},
+        {id: 2, name: 'Half City', roast: 'light'},
+        {id: 3, name: 'Cinnamon', roast: 'light'},
+        {id: 4, name: 'City', roast: 'medium'},
+        {id: 5, name: 'American', roast: 'medium'},
+        {id: 6, name: 'Breakfast', roast: 'medium'},
+        {id: 7, name: 'High', roast: 'dark'},
+        {id: 8, name: 'Continental', roast: 'dark'},
+        {id: 9, name: 'New Orleans', roast: 'dark'},
+        {id: 10, name: 'European', roast: 'dark'},
+        {id: 11, name: 'Espresso', roast: 'dark'},
+        {id: 12, name: 'Viennese', roast: 'dark'},
+        {id: 13, name: 'Italian', roast: 'dark'},
+        {id: 14, name: 'French', roast: 'dark'}
+    ];
+    localStorage.setItem("coffeeArray",JSON.stringify(coffees));
+    console.log(JSON.parse(localStorage.getItem("coffeeArray")));
+
+}
+
+function originalArray(){
+    coffees = [
+        {id: 1, name: 'Light City', roast: 'light'},
+        {id: 2, name: 'Half City', roast: 'light'},
+        {id: 3, name: 'Cinnamon', roast: 'light'},
+        {id: 4, name: 'City', roast: 'medium'},
+        {id: 5, name: 'American', roast: 'medium'},
+        {id: 6, name: 'Breakfast', roast: 'medium'},
+        {id: 7, name: 'High', roast: 'dark'},
+        {id: 8, name: 'Continental', roast: 'dark'},
+        {id: 9, name: 'New Orleans', roast: 'dark'},
+        {id: 10, name: 'European', roast: 'dark'},
+        {id: 11, name: 'Espresso', roast: 'dark'},
+        {id: 12, name: 'Viennese', roast: 'dark'},
+        {id: 13, name: 'Italian', roast: 'dark'},
+        {id: 14, name: 'French', roast: 'dark'}
+    ];
+    localStorage.setItem("coffeeArray",JSON.stringify(coffees));
+    tbody.innerHTML = renderCoffees(coffees);
+
+}
 function renderCoffee(coffee) {
 
     var html = '<div class="coffee">';
@@ -29,7 +75,7 @@ function newCoffees(e){
     };
     console.log(newCoffee);
     coffees.push(newCoffee);
-    localStorage.setItem("coffee-array", coffees);
+    localStorage.setItem("coffeeArray", JSON.stringify(coffees));
     tbody.innerHTML = renderCoffees(coffees);
 
 }
@@ -49,27 +95,7 @@ function updateCoffees(e) {
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
-    if(localStorage !== "undefined") {
-    coffees = localStorage.getItem("coffees-array");
-    }else{
-         coffees = [
-            {id: 1, name: 'Light City', roast: 'light'},
-            {id: 2, name: 'Half City', roast: 'light'},
-            {id: 3, name: 'Cinnamon', roast: 'light'},
-            {id: 4, name: 'City', roast: 'medium'},
-            {id: 5, name: 'American', roast: 'medium'},
-            {id: 6, name: 'Breakfast', roast: 'medium'},
-            {id: 7, name: 'High', roast: 'dark'},
-            {id: 8, name: 'Continental', roast: 'dark'},
-            {id: 9, name: 'New Orleans', roast: 'dark'},
-            {id: 10, name: 'European', roast: 'dark'},
-            {id: 11, name: 'Espresso', roast: 'dark'},
-            {id: 12, name: 'Viennese', roast: 'dark'},
-            {id: 13, name: 'Italian', roast: 'dark'},
-            {id: 14, name: 'French', roast: 'dark'}
-        ];
-         localStorage.setItem("coffee-array", coffees);
-    }
+
 
 function getCoffee(){
     var search = document.getElementById("coffeeName").value;
@@ -92,28 +118,30 @@ function getCoffee(){
 
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
-var coffees = [
-    {id: 1, name: 'Light City', roast: 'light'},
-    {id: 2, name: 'Half City', roast: 'light'},
-    {id: 3, name: 'Cinnamon', roast: 'light'},
-    {id: 4, name: 'City', roast: 'medium'},
-    {id: 5, name: 'American', roast: 'medium'},
-    {id: 6, name: 'Breakfast', roast: 'medium'},
-    {id: 7, name: 'High', roast: 'dark'},
-    {id: 8, name: 'Continental', roast: 'dark'},
-    {id: 9, name: 'New Orleans', roast: 'dark'},
-    {id: 10, name: 'European', roast: 'dark'},
-    {id: 11, name: 'Espresso', roast: 'dark'},
-    {id: 12, name: 'Viennese', roast: 'dark'},
-    {id: 13, name: 'Italian', roast: 'dark'},
-    {id: 14, name: 'French', roast: 'dark'}
-];
+// var coffees = [
+//     {id: 1, name: 'Light City', roast: 'light'},
+//     {id: 2, name: 'Half City', roast: 'light'},
+//     {id: 3, name: 'Cinnamon', roast: 'light'},
+//     {id: 4, name: 'City', roast: 'medium'},
+//     {id: 5, name: 'American', roast: 'medium'},
+//     {id: 6, name: 'Breakfast', roast: 'medium'},
+//     {id: 7, name: 'High', roast: 'dark'},
+//     {id: 8, name: 'Continental', roast: 'dark'},
+//     {id: 9, name: 'New Orleans', roast: 'dark'},
+//     {id: 10, name: 'European', roast: 'dark'},
+//     {id: 11, name: 'Espresso', roast: 'dark'},
+//     {id: 12, name: 'Viennese', roast: 'dark'},
+//     {id: 13, name: 'Italian', roast: 'dark'},
+//     {id: 14, name: 'French', roast: 'dark'}
+// ];
 //push
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var addButton = document.querySelector('#addRoast');
 var roastSelection = document.querySelector('#roast-selection');
 var findCoffee = document.getElementById('coffeeName');
+var resetArray = document.getElementById('clearData');
+resetArray.addEventListener('click', originalArray);
 findCoffee.addEventListener("keyup", getCoffee, false);
 
 
