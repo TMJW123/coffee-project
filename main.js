@@ -145,8 +145,8 @@ var findCoffee = document.getElementById('coffeeName');
 var resetArray = document.getElementById('clearData');
 resetArray.addEventListener('click', originalArray);
 findCoffee.addEventListener("keyup", getCoffee, false);
-
-
+var clickRoast = document.getElementById("roast-selection");
+clickRoast.addEventListener('change', updateCoffees);
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
