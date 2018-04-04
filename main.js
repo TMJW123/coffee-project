@@ -14,7 +14,6 @@ function renderCoffees(coffees) {
     var html = '';
     for(var i = 0; i < coffees.length; i++) {
         html += renderCoffee(coffees[i]);
-        console.log(i);
     }
     return html;
 }
@@ -29,6 +28,21 @@ function updateCoffees(e) {
         }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
+}
+
+function getCoffee(){
+    var search = document.getElementById("coffeeName").value;
+    console.log(search);
+    for(var i = 0; i < coffees.length; i++) {
+        var checkString = coffees[i].name;
+        if(checkString.substring(search) == true){
+            renderCoffee(coffees[i]);
+            console.log(coffees[i].name);
+
+        }
+
+    }
+
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -46,12 +60,15 @@ var coffees = [
     {id: 11, name: 'Espresso', roast: 'dark'},
     {id: 12, name: 'Viennese', roast: 'dark'},
     {id: 13, name: 'Italian', roast: 'dark'},
-    {id: 14, name: 'French', roast: 'dark'},
+    {id: 14, name: 'French', roast: 'dark'}
 ];
 //push
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
+var findCoffee = document.getElementById('coffeeName');
+findCoffee.addEventListener("keydown", getCoffee, false);
+
 
 tbody.innerHTML = renderCoffees(coffees);
 
