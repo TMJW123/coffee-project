@@ -1,9 +1,11 @@
 "use strict";
 
 var coffees = [];
+localStorage.setItem("coffeeArray", JSON.stringify(coffees));
 
-if(localStorage.getItem('coffeeArray').length > 0) {
+if(JSON.parse(localStorage.getItem("coffeeArray")).length > 0) {
     coffees = JSON.parse(localStorage.getItem('coffeeArray'));
+    console.log("if");
 } else {
     coffees = [
         {id: 1, name: 'Light City', roast: 'light'},
