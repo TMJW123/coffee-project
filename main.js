@@ -1,6 +1,7 @@
-"use strict"
+"use strict";
 
 function renderCoffee(coffee) {
+
     var html = '<div class="coffee">';
     html += '<h3 class = "coffeeLabel">' + coffee.name + '</h3>';
     html += '<p class = "coffeeLabelTwo">' + coffee.roast + '</p>';
@@ -11,8 +12,9 @@ function renderCoffee(coffee) {
 
 function renderCoffees(coffees) {
     var html = '';
-    for(var i = coffees.length - 1; i >= 0; i--) {
+    for(var i = 0; i < coffees.length; i++) {
         html += renderCoffee(coffees[i]);
+        console.log(i);
     }
     return html;
 }

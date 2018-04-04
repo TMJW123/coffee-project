@@ -25,13 +25,8 @@ td, th {
     float: left;
 }
 
-
-#roast-selection{
-    width: 200%;
-}
-#add-roast{
-    width: 200%;
-}
-.form-control{
-    width: 200%;
+.coffeeName{
+    margin-top: 4%;
+    font-style: italic;
+    color: saddlebrown;
 }
