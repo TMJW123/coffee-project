@@ -52,7 +52,7 @@ function originalArray(){
 function renderCoffee(coffee) {
 
     var html = '<div class="coffee">';
-    html += '<h3 class = "coffeeLabel">' + coffee.name + '</h3>';
+    html += '<h6 class = "coffeeLabel">' + coffee.name + '</h6>';
     html += '<p class = "coffeeLabelTwo">' + coffee.roast + '</p>';
     html += '</div>';
     // html += '<br>';

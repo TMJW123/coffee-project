@@ -16,6 +16,7 @@ td, th {
 }
 .coffeeLabel{
     float: left;
+    margin-left: 2%
 }
 
 .coffeeLabelTwo{
@@ -24,14 +25,30 @@ td, th {
 }
 
 .coffee{
-    width: 50%;
+    width: 40%;
     float: left;
+    background-color: #54AB8A;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 3%;
+    border: 2px solid darkgreen;
+    border-radius: 15%;
+    padding-left: 6%;
+    font-style: italic;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    box-shadow: 5px 5px 5px;
 }
 
 .coffeeName{
     margin-top: 4%;
     font-style: italic;
     color: saddlebrown;
+
+}
+
+.inputBox{
+    background-color: gray;
 }
 
 
