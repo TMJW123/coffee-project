@@ -35,7 +35,7 @@ function getCoffee(){
     console.log(search);
     for(var i = 0; i < coffees.length; i++) {
         var checkString = coffees[i].name;
-        if(checkString.substring(search) == true){
+        if(checkString.includes(search) == true){
             renderCoffee(coffees[i]);
             console.log(coffees[i].name);
 
