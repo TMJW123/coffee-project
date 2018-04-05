@@ -5,7 +5,6 @@ var coffees = [];
 
 if(typeof(Storage) !== null) {
     coffees = JSON.parse(localStorage.getItem('coffeeArray'));
-    console.log("if");
 } else {
     coffees = [
         {id: 1, name: 'Light City', roast: 'light'},
